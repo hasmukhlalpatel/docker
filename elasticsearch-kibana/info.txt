@@ -1,0 +1,2 @@
+#resolve low virtua lmemory issue.
+sudo osysctl -w vm.max_map_count=262144
