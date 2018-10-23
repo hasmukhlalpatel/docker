@@ -18,6 +18,9 @@ Kiban   [http://localhost:5601/](http://localhost:5601/)
 Elastic [http://localhost:8081/](http://localhost:8081/)
 #### Commands
 $ docker exec -it some-mongo bash
+
 $ docker logs some-mongo
+
 $ docker run -it --link some-mongo:mongo --rm mongo mongo --host mongo test
+
 Run docker stack deploy -c stack.yml mongo (or docker-compose -f stack.yml up
