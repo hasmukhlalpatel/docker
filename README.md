@@ -24,3 +24,5 @@ $ docker logs some-mongo
 $ docker run -it --link some-mongo:mongo --rm mongo mongo --host mongo test
 
 Run docker stack deploy -c stack.yml mongo (or docker-compose -f stack.yml up
+
+![Try on PWD](https://github.com/play-with-docker/stacks/raw/cff22438cb4195ace27f9b15784bbb497047afa7/assets/images/button.png)
