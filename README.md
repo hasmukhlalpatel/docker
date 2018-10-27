@@ -10,7 +10,7 @@ Elastic [http://localhost:9200/](http://localhost:9200/)
 
 Kiban   [http://localhost:5601/](http://localhost:5601/)
 
-[<img src="https://github.com/play-with-docker/stacks/raw/cff22438cb4195ace27f9b15784bbb497047afa7/assets/images/button.png">](https://labs.play-with-docker.com/?stack=https://raw.githubusercontent.com/hasmukhlalpatel/docker/master/elasticsearch-kibana/docker-compose.yml)
+[<img src="https://github.com/play-with-docker/stacks/raw/cff22438cb4195ace27f9b15784bbb497047afa7/assets/images/button.png">](https://labs.play-with-docker.com/?stack=https://raw.githubusercontent.com/hasmukhlalpatel/docker/master/elasticsearch-kibana/docker-compose-hub.yml)
 
 ## 2. WordPress MySql
 
