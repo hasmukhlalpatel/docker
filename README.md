@@ -34,9 +34,9 @@ Run docker stack deploy -c stack.yml mongo (or docker-compose -f stack.yml up
 ## NodeJs App
 ### Commands
 ```
-docker build -t hasu/nodeJsApp .
+docker build -t <user name>/nodeJsApp .
 
-docker run -p 49160:8080 -d  hasu/nodeJsApp
+docker run -p 49160:8080 -d  <user name>/nodeJsApp
 ```
 
 
