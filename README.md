@@ -31,3 +31,12 @@ Run docker stack deploy -c stack.yml mongo (or docker-compose -f stack.yml up
 
 [<img src="https://github.com/play-with-docker/stacks/raw/cff22438cb4195ace27f9b15784bbb497047afa7/assets/images/button.png">](https://labs.play-with-docker.com/?stack=https://raw.githubusercontent.com/hasmukhlalpatel/docker/master/mongo-express/stack.yml)
 
+## NodeJs App
+### Commands
+```
+docker build -t hasu/nodeJsApp .
+
+docker run -p 49160:8080 -d  hasu/nodeJsApp
+```
+
+
