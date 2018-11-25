@@ -13,6 +13,16 @@ docker-compose ps
 docker-compose down --volumes
 ```
 
+## Set up a Docker registry
+1. Start the registry as a service on your swarm:
+```
+ docker service create --name registry --publish published=5000,target=5000 registry:2
+```
+2. Check its status with docker service ls:
+```
+ docker service ls
+```
+
 ## Push the generated image to the registry
 ```
 docker-compose push
