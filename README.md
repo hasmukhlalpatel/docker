@@ -81,7 +81,32 @@ docker-compose push
 ### Run the following command:
 ```
 docker service create --replicas 1 --name helloworld alpine ping docker.com
+
+docker service create \
+  --name my-web \
+  --publish published=8080,target=80 \
+  --replicas 2 \
+  nginx
+
+docker service create --name nginx --publish published=80,target=80 nginx
+
+docker service create --name dns-cache -p 53:53 dns-cache 
+
+docker service create --name dns-cache \
+  --publish published=53,target=53 \
+  --publish published=53,target=53,protocol=udp \
+  dns-cache
+  
+ docker service create --name dns-cache \
+  -p 53:53 \
+  -p 53:53/udp \
+  dns-cache
 ```
+### Inspect
+```
+docker service inspect --format="{{json .Endpoint.Spec.Ports}}" helloworld
+```
+
 ### To see the list of running services:
 ```
 docker service ls
@@ -101,6 +126,38 @@ docker service ps <SERVICE-ID>
 #### Example
 ```
 docker service ps helloworld
+```
+
+## Apply rolling updates to a service
+```
+docker service create \
+  --replicas 3 \
+  --name redis \
+  --update-delay 10s \
+  redis:3.0.6
+  
+  Or
+  
+  docker service update --image redis:3.0.7 redis
+  
+  Or
+  
+  docker service update redis
+```
+### Inspect the redis service:
+```
+docker service inspect --pretty redis
+```
+
+## Drain a node on the swarm
+```
+docker node ls
+
+docker node update --availability drain worker1
+
+docker node update --availability active worker1
+
+docker node inspect --pretty worker
 ```
 
 
