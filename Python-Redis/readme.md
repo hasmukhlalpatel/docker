@@ -1,14 +1,22 @@
 # Commands
 ## Test the app with Compose
+```
 - docker-compose up
 - docker-compose up -d
+```
 ## Check that the app is running with docker-compose ps
+```
 docker-compose ps
+```
 ## Bring the app down
+```
 docker-compose down --volumes
+```
 
 ## Push the generated image to the registry
+```
 docker-compose push
+```
 
 ## Deploy the stack to the swarm
 1. Create the stack with docker stack deploy:
