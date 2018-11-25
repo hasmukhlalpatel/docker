@@ -32,31 +32,70 @@ Run docker stack deploy -c stack.yml mongo (or docker-compose -f stack.yml up
 [<img src="https://github.com/play-with-docker/stacks/raw/cff22438cb4195ace27f9b15784bbb497047afa7/assets/images/button.png">](https://labs.play-with-docker.com/?stack=https://raw.githubusercontent.com/hasmukhlalpatel/docker/master/mongo-express/stack.yml)
 
 ## NodeJs App
-### Commands
+# docker swarm setup commands
+## Setup Docekr swarm
+### inti
 ```
-docker build -t <user name>/nodeJsApp .
+ docker swarm init --advertise-addr {IP addr}
+```
+### join
+```
+ docker swarm join --token SWMTKN{your token}
+```
+### leave
+```
+ docker swarm leave --force
+```
 
-docker run -p 49160:8080 -d  <user name>/nodeJsApp
-```
 # Docker compose Commands
-## Up and running
-  ### detached
-  - docker-compose up -d
-  ### attached
-  - docker-compose up 
-## Check that the app is running 
+## Test the app with Compose
+```
+- docker-compose up
+- docker-compose up -d
+```
+## Check that the app is running with docker-compose ps
+```
 docker-compose ps
+```
 ## Bring the app down
+```
 docker-compose down --volumes
-docker-compose down
+```
 
-# Set up a Docker registry
-docker service create --name registry --publish published=5000,target=5000 registry:2
+## Set up a Docker registry
+1. Start the registry as a service on your swarm:
+```
+ docker service create --name registry --publish published=5000,target=5000 registry:2
+```
+2. Check its status with docker service ls:
+```
+ docker service ls
+```
 
 ## Push the generated image to the registry
-docker-compose push
-## Check its status with 
 ```
-docker service ls
+docker-compose push
+```
+
+## Deploy the stack to the swarm
+1. Create the stack with docker stack deploy:
+```
+  docker stack deploy --compose-file docker-compose.yml stackdemo
+```
+2. Check that it’s running with docker stack services stackdemo:
+```
+  docker stack services stackdemo
+```
+3. Bring the stack down with docker stack rm:
+```
+  docker stack rm stackdemo
+```
+4. Bring the registry down with docker service rm:
+```
+  docker service rm registry
+```
+5. if you’re just testing things out on a local machine and want to bring your Docker Engine out of swarm mode, use docker swarm leave:
+```
+  docker swarm leave --force
 ```
 
