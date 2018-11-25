@@ -38,5 +38,21 @@ docker build -t <user name>/nodeJsApp .
 
 docker run -p 49160:8080 -d  <user name>/nodeJsApp
 ```
+# Docker compose Commands
+## Up and running
+  ### detached
+  - docker-compose up -d
+  ### attached
+  - docker-compose up 
+## Check that the app is running 
+docker-compose ps
+## Bring the app down
+docker-compose down --volumes
+docker-compose down
 
+# Set up a Docker registry
+docker service create --name registry --publish published=5000,target=5000 registry:2
+
+# Push the generated image to the registry
+docker-compose push
 
