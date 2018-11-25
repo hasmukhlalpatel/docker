@@ -53,6 +53,10 @@ docker-compose down
 # Set up a Docker registry
 docker service create --name registry --publish published=5000,target=5000 registry:2
 
-# Push the generated image to the registry
+## Push the generated image to the registry
 docker-compose push
+## Check its status with 
+```
+docker service ls
+```
 
