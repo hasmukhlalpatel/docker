@@ -86,6 +86,23 @@ docker service create --replicas 1 --name helloworld alpine ping docker.com
 ```
 docker service ls
 ```
+### To change the desired scale of the service running in the swarm::
+```
+docker service scale <SERVICE-ID>=<NUMBER-OF-TASKS>
+```
+#### Example
+```
+docker service scale helloworld=5
+```
+### To see the service status
+```
+docker service ps <SERVICE-ID>
+```
+#### Example
+```
+docker service ps helloworld
+```
+
 
 ## Deploy the stack to the swarm
 1. Create the stack with docker stack deploy:
