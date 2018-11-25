@@ -77,6 +77,16 @@ docker-compose down --volumes
 docker-compose push
 ```
 
+## Deploy a service to the swarm
+### Run the following command:
+```
+docker service create --replicas 1 --name helloworld alpine ping docker.com
+```
+### To see the list of running services:
+```
+docker service ls
+```
+
 ## Deploy the stack to the swarm
 1. Create the stack with docker stack deploy:
 ```
