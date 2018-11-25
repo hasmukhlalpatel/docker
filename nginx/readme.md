@@ -1,4 +1,4 @@
-#Commands
+# Commands
 ## Up and running
   ### detached
   -docker-compose up -d
