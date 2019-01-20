@@ -34,7 +34,7 @@ Run docker stack deploy -c stack.yml mongo (or docker-compose -f stack.yml up
 ## NodeJs App
 # docker swarm setup commands
 ## Setup Docekr swarm
-### inti
+### init
 ```
  docker swarm init --advertise-addr {IP addr}
 ```
