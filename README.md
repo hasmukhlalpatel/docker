@@ -27,11 +27,16 @@ $ docker logs some-mongo
 
 $ docker run -it --link some-mongo:mongo --rm mongo mongo --host mongo test
 
-Run docker stack deploy -c stack.yml mongo (or docker-compose -f stack.yml up
+Run docker stack deploy -c stack.yml mongo or docker-compose -f stack.yml up
 
 [<img src="https://github.com/play-with-docker/stacks/raw/cff22438cb4195ace27f9b15784bbb497047afa7/assets/images/button.png">](https://labs.play-with-docker.com/?stack=https://raw.githubusercontent.com/hasmukhlalpatel/docker/master/mongo-express/stack.yml)
 
+## 3. RabbitMQ
+[<img src="https://github.com/play-with-docker/stacks/raw/cff22438cb4195ace27f9b15784bbb497047afa7/assets/images/button.png">](https://labs.play-with-docker.com/?stack=https://raw.githubusercontent.com/hasmukhlalpatel/docker/master/rabbitmq/docker-compose.yml)
+
+
 ## NodeJs App
+
 # docker swarm setup commands
 ## Setup Docekr swarm
 ### init
