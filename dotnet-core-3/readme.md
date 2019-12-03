@@ -1,6 +1,6 @@
 *selfcontained application docker image*
 ```
-docker build --pull -t dotnetapp:alpine-x64-selfcontained  .
+docker build --pull -t dotnetapp:alpine-x64-selfcontained -f Dockerfile.alpine-x64-selfcontained .
 ```
 
 ```
