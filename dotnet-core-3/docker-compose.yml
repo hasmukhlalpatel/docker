@@ -1,10 +1,14 @@
 version: "3.2"
 services:
   web:
-    build: ./Dockerfile.debian-x64-selfcontained
+    build:
+        context: .
+        dockerfile: Dockerfile.alpine-x64-selfcontained
     ports:
       - "80:80"
   web2:
-    build: ./Dockerfile.alpine-x64-selfcontained
+    build:
+        context: .
+        dockerfile: Dockerfile.debian-x64-selfcontained
     ports:
-      - "80:80"
+      - "81:80"
