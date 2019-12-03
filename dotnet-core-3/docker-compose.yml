@@ -5,6 +5,6 @@ services:
     ports:
       - "80:80"
   web2:
-    build: ./Dockerfile.debian-x64-selfcontained
+    build: ./Dockerfile.alpine-x64-selfcontained
     ports:
       - "80:80"
