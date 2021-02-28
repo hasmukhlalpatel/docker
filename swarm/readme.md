@@ -28,6 +28,7 @@ docker swarm join-token worker
 ```
 docker node ls
 ```
+(Docker docs)[https://docs.docker.com/engine/reference/commandline/node/]
 
 # Commands
 ## Test the app with Compose
