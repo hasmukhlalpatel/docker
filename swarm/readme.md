@@ -8,6 +8,17 @@
 ```
  docker swarm join --token SWMTKN{your token}
 ```
+
+### get token to join as manager
+```
+docker swarm join-token manager
+```
+
+### get token to join as worker
+```
+docker swarm join-token worker
+```
+
 ### leave
 ```
  docker swarm leave --force
