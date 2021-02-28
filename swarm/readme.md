@@ -24,6 +24,11 @@ docker swarm join-token worker
  docker swarm leave --force
 ```
 
+### node list
+```
+docker node ls
+```
+
 # Commands
 ## Test the app with Compose
 ```
